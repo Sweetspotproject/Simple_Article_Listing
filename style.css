@@ -1,0 +1,178 @@
+/* 
+   Configuración global:
+   - Elimina márgenes y relleno predeterminados en todos los elementos (*).
+   - Configura el sistema de caja para asegurar que padding y border se incluyan en las dimensiones de los elementos.
+   - Establece la fuente global de la página como "Poppins".
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* 
+   Cuerpo de la página:
+   - Fondo en un tono claro (#F8FAFC).
+   - Color de texto negro (#000000).
+*/
+body {
+  background-color: #F8FAFC;
+  color: #000000;
+}
+
+/* 
+   Estilos para el encabezado principal de la página:
+   - Espaciado superior e inferior de 40px.
+   - Texto centrado.
+*/
+header {
+  padding: 40px;
+  text-align: center;
+}
+
+/* 
+   Estilo para el título principal:
+   - Tamaño de fuente grande (2.25rem) y peso de fuente en negrita (600).
+*/
+h1 {
+  font-size: 2.25rem;
+  font-weight: 600;
+}
+
+/* 
+   Contenedor del separador gráfico:
+   - Centra el contenido.
+*/
+.Separator {
+  text-align: center;
+}
+
+/* 
+   Contenedor principal de los artículos:
+   - Diseño en columna.
+   - Espaciado entre artículos de 20px.
+   - Ancho del contenedor del 50% de la pantalla con centrado automático.
+   - Espaciado interno de 50px.
+*/
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 50%;
+  margin: 0 auto;
+  padding: 50px;
+  text-align: center;
+}
+
+/* 
+   Estilos de cada artículo:
+   - Diseño en fila con alineación central.
+   - Relleno de 20px.
+   - Espaciado entre imagen y contenido de 60px.
+*/
+article {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  gap: 60px;
+}
+
+/* 
+   Estilo de la imagen en los artículos:
+   - Ancho de 160px.
+   - Bordes redondeados (8px).
+   - Ajuste de imagen para cubrir el espacio disponible.
+*/
+.image {
+  width: 160px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* 
+   Efecto hover sobre los artículos:
+   - Cambia el fondo a un tono gris claro (#D9D9D9) al pasar el cursor sobre el artículo.
+*/
+article:hover {
+  background-color: #D9D9D9;
+}
+
+/* 
+   Título de cada artículo:
+   - Alineación del texto a la izquierda.
+   - Tamaño de fuente de 1.25rem y peso de 600.
+   - Sin márgenes superiores o inferiores.
+*/
+h3 {
+  text-align: left;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* 
+   Fecha de publicación:
+   - Alineación del texto a la izquierda.
+   - Margen superior de 10px para separación del título.
+*/
+.date {
+  text-align: left;
+  margin-top: 10px;
+}
+
+/* 
+   Media query para pantallas de hasta 768px:
+   - Ajusta el ancho del contenedor al 90%.
+   - Reduce el relleno interno.
+   - Cambia el diseño del artículo a columna y centra el contenido.
+   - Imagen con ancho 100% y altura automática para mantener la proporción.
+*/
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 30px 10px;
+  }
+
+  article {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    font-size: 2rem;
+    text-align: left;
+  }
+}
+
+/* 
+   Media query para pantallas de hasta 480px:
+   - Reduce el tamaño de la fuente del título principal a 1.75rem.
+   - Ajusta el relleno del contenedor.
+   - Reduce el tamaño de la fuente del título de cada artículo y de la fecha para mejorar la visualización en dispositivos pequeños.
+*/
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  h3 {
+    font-size: 0.875rem;
+  }
+
+  .date {
+    font-size: 0.75rem;
+  }
+}
+
